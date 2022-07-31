@@ -6,7 +6,7 @@ before_install:
   - docker build -t aspxsushilhd/react-test -f ./client/Dockerfile.dev ./client
 
 script:
-  - docker run aspxsushilhd/react-test npm test -- --coverage
+  -  docker run -e CI=true aspxsushilhd/react-test npm test
 
 after_success:
   - docker build -t aspxsushilhd/multi-client ./client
