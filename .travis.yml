@@ -10,9 +10,9 @@ script:
 
 after_success:
   - docker build -t aspxsushilhd/multi-client ./client
-  - docker-build -t aspxsushilhd/multi-nginx ./nginx
-  - docker-build -t aspxsushilhd/multi-server ./server
-  - docker-build -t aspxsushilhd/multi-worker ./worker
+  - docker build -t aspxsushilhd/multi-nginx ./nginx
+  - docker build -t aspxsushilhd/multi-server ./server
+  - docker build -t aspxsushilhd/multi-worker ./worker
 
   # Log in to the docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
